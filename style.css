@@ -1,0 +1,246 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #53a8b6;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+
+  header button {
+    border: none;
+    background-color: transparent;
+  }
+
+  header {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+  }
+
+  .home_div1 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    background-image: url(footballcourt.png);
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-repeat: no-repeat;
+    text-align: center;
+    
+  }
+  .home_div1 h2{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #9fd3c7;
+    
+  }
+  
+  .home_div1 h4{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #ffffff;
+    
+  }
+
+  .home_div2 {
+    width: auto;
+    height: auto;
+    background-color: #53a8b6;
+    padding-left: 15px;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .home_div4 {
+    width: auto;
+    height: auto;
+    background-color: #53a8b6;
+    padding-left: 15px;
+    align-items: center;
+    color: #fff;
+  }
+
+  .home_div4 button{
+    border: none;
+    background-color: transparent;
+    
+  }
+
+  footer {
+    width: auto;
+    height: auto;
+    background-color: #53a8b6;
+    padding-left: 15px;
+    padding-top: 10px;
+    align-items: center;
+    color: #fff;
+    padding-left: 25px;
+    padding-right: 25px;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .info_div1 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    background-image: url(footballcourt.png);
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-repeat: no-repeat;
+    text-align: center; }
+
+    .info_div1 h2{
+        font-family:'Times New Roman', Times, serif;
+        font-size: 26px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        color: #9fd3c7;
+        
+      }
+      
+      .info_div1 h4{
+        font-family:'Times New Roman', Times, serif;
+        font-size: 26px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        color: #ffffff;
+      }
+
+      .info_div2 {
+        font-family:'Times New Roman', Times, serif;
+        font-size: 16px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        color: #000000;
+        
+      }
+
+      .login_div1 {
+        font-family:'Times New Roman', Times, serif;
+        font-size: 26px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        background-image: url(footballcourt.png);
+        padding-top: 200px;
+        padding-bottom: 200px;
+        padding-right: 230px;
+        background-repeat: no-repeat;
+        text-align: center;
+        
+      }
+
+      .login_div1 h2{
+        font-family:'Times New Roman', Times, serif;
+        font-size: 26px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        color: #9fd3c7;
+        
+      }
+      
+      .login_div1 h4,label{
+        font-family:'Times New Roman', Times, serif;
+        font-size: 26px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        color: #ffffff;
+        
+      }
+
+      .login_div1 button {
+        border: none;
+        background-color: transparent;
+        color: #9fd3c7;
+        font-size: 21px;
+      }
+
+      .signup_div1 {
+        font-family:'Times New Roman', Times, serif;
+        font-size: 26px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        background-image: url(footballcourt.png);
+        padding-top: 200px;
+        padding-bottom: 200px;
+        padding-right: 230px;
+        background-repeat: no-repeat;
+        text-align: center;
+        
+      }
+
+      .signup_div1 h2{
+        font-family:'Times New Roman', Times, serif;
+        font-size: 26px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        color: #9fd3c7;
+        
+      }
+      
+      .signup_div1 h4,label{
+        font-family:'Times New Roman', Times, serif;
+        font-size: 26px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        color: #ffffff;
+        
+      }
+
+      .signup_div1 button {
+        border: none;
+        background-color: transparent;
+        color: #9fd3c7;
+        font-size: 21px;
+      }
+
+      .signup_div1 a{
+        font-family:'Times New Roman', Times, serif;
+        font-size: 20px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        color: #ffffff;
+        
+      }
+
+      
+
+      .user_div1 {
+        font-family:'Times New Roman', Times, serif;
+        font-size: 26px;
+        letter-spacing: 2px;
+        word-spacing: 2px;
+        background-image: url(footballcourt.png);
+        padding-top: 200px;
+        padding-bottom: 200px;
+        background-repeat: no-repeat;
+        text-align: center; }
+    
+        .user_div1 h2{
+            font-family:'Times New Roman', Times, serif;
+            font-size: 26px;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #9fd3c7;
+            
+          }
+          
+          .user_div1 h4{
+            font-family:'Times New Roman', Times, serif;
+            font-size: 26px;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #ffffff;
+          }

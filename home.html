@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head> <br><br><br>
+<body>
+    <script src="script.js"></script>
+
+    
+
+<header> 
+    <!-- add CSS code that makes its position fixed -->
+    <!-- add js functions that opens the pages or sections specified in each button -->
+    <!-- add js functions that hides My profile button or the log in button depending on wether the user logged in or not -->
+    <h4 id="website name">Cortly</h4>
+    <!-- add logo img -->
+    <a href="info.html"><button type="button" class="header" id="About Us"> About Us </button></a>
+    
+    <a href="login.html"><button type="button" class="header" id="Log in"> Log in </button></a>
+    
+    <a href="Signup.html"><button type="button" class="header" id="Signup"> Sign Up </button></a>
+    
+    <a href="user.html"><button type="button" class="header" id="My Profile"> My Profile </button></a>
+
+    
+</header>
+<main>
+    <div class="home_div1">
+        <!--    html code to add the image in the background -->
+        <!-- add CSS code to style h2 and h4 to make the image in the background -->\
+
+        <h2> Dream And Accomplish</h2>
+
+        <h4>A Booking Experience For Students By Students</h4>
+
+    </div>
+
+    <h1>Book a Court</h1>
+
+    <div class="home_div2">
+        <!-- add CSS code to style h1 and h2 -->
+        <button id="Location"> <h3>Location</h3> <br> 
+            <label for="Location">Select a Location:</label>
+            <select name="Location" id="Locations">
+              <option value="KFUPM">KFUPM</option>
+              <option value="DAHRAN">DAHRAN</option>
+              <option value="KHOABR">KHOABR</option>
+              <option value="DAMMAM">DAMMAM</option>      
+            </select>
+        </button>
+
+        <button id="Category"> <h3>Category</h3> <br> <label for="Category">Select a Category:</label>
+            <select name="Category" id="Categorys">
+              <option value="FootballCourt">Football Court</option>
+              <option value="PadelCourt">Padel Court</option>
+              <option value="BasketballCourt">Basketball Court</option>      
+            </select>
+        </button>
+
+        <button id="Date"> <h3>Date</h3> <br> <label for="Date">Select a Date:</label>
+            <input type="Date" id="Date" name="Date">
+        </button>
+
+        <button id="Time"> <h3>Time</h3> <br> <label for="appt">Select a time:</label>
+            <input type="time" id="appt" name="appt">
+        </button>
+
+        <button id="Duration"> <h3>Duration</h3> <br> <label for="Duration">Select a Duration:</label>
+            <select name="Duration" id="Duration">
+              <option value="1-Hour">1-Hour</option>
+              <option value="2-Hour">2-Hour</option>
+              <option value="3-Hour">3-Hour</option>
+            </select>
+        </button>
+        <button id="Search"> <h3>&#128269;</h3> <br>Search</button>
+
+    </div>
+
+    <div class="home_div3">
+        <h1>Courts</h1>
+        <!-- add js code to add the courts from the DB-->
+    </div>
+
+    <div class="home_div4"> 
+        <h1>Reservation Confirmation</h1>
+
+        <form  method="get" id="Reservation Confirmation">     
+            <!-- add js code to add a confirmation for the reservation with the given Reservation Number if the user already logged in or go to
+             the log in page -->   
+            <label for="Reservation Number">Reservation Number</label>
+            <input type="text" id="Reservation Number" name ="Reservation ID" placeholder="Enter the Reservation ID..."> <br>
+            <button type="button" class="header" id="SearchRes"> Search for Reservation </button> 
+
+        </form>
+
+        </div>
+    </main> <br><br><br><br><br><br><br><br>
+    <footer>
+    
+        <a href="home.html">Home</a> <br>
+        <a href="info.html">About Us</a> <br> <br> 
+       <a href="https://www.instagram.com/kfupm/?hl=ar"> <img src="inst.png" alt="instegram logo image" width="40"> </a>
+        <a href="https://twitter.com/KFUPM?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="X.png" alt="X logo image" width="40"></a>
+        <a href="https://www.tiktok.com/tag/kfupm?lang=ar"><img src="tiktok.png" alt="TikTok logo image" width="40"></a>
+      
+    </footer>
+
+
+
+</body>
+</html>
