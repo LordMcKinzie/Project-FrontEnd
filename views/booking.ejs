@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+
+
+    <header>
+        <!-- add CSS code that makes its position fixed -->
+        <!-- add js functions that opens the pages or sections specified in each button -->
+        <!-- add js functions that hides My profile button or the log in button depending on wether the user logged in or not -->
+        <h4 id="website name">Cortly</h4>
+        <!-- add logo img -->
+        <a href="#"><button type="button" class="header" id="About Us"> About Us </button></a>
+
+        <% if (loggedIn) { %>
+            <!-- Show logout button if user is logged in -->
+            <a href="/logout"><button type="button" class="header">Logout</button></a>
+            <% } else { %>
+                <!-- Show login and signup buttons if user is not logged in -->
+                <a href="/login"><button type="button" class="header">Login</button></a>
+                <a href="/signup"><button type="button" class="header">Sign Up</button></a>
+        <% } %>
+
+        <a href="#"><button type="button" class="header" id="My Profile"> My Profile </button></a>
+
+
+    </header>
+    <main>
+        <div class="home_div1">
+            <!--    html code to add the image in the background -->
+            <!-- add CSS code to style h2 and h4 to make the image in the background -->\
+
+            <h2> Dream And Accomplish</h2>
+
+            <h4>A Booking Experience For Students By Students</h4>
+
+        </div>
+
+        <h1>Book Court</h1>
+
+        <div class="home_div2">
+            <!-- add CSS code to style h1 and h2 -->
+            <div class="row" style="margin: 10px;">
+                <div class="col-md-6"
+                    style="border-radius: 10px;  height: 400px;background-color: gainsboro;margin: 5px;">
+                    <h4 style="text-align: center;color: black;margin-top: 20px;"><%= court.name %></h4>
+                    <h6 style="text-align: center;color: black;margin-top: 20px;"><%= court.location %></h6>
+                    <label style="color:black;font-size: 12px;">Select Date</label>
+
+                    <select class="form-control" id="category" >
+                        <option value="">Select Category</option>
+                        <% categories.forEach(cat=> { %>
+                            <!-- Extract date from time slot and format as YYYY-MM-DD -->
+                                <!-- Use slotDate as value and display in a user-friendly format -->
+                                <option value="<%= cat.name %>">
+                                    <%= cat.name %>
+                                </option>
+                        <% }); %>
+
+                    </select>
+
+
+                    <select class="form-control" id="dateSelect" style="margin-top: 10px;;">
+                        <option value="">Select Date</option>
+                        <% timeSlots.forEach(slot=> { %>
+                            <!-- Extract date from time slot and format as YYYY-MM-DD -->
+                            <% const slotDate=slot.date; %>
+                                <!-- Use slotDate as value and display in a user-friendly format -->
+                                <option value="<%= slotDate %>">
+                                    <%= slotDate %>
+                                </option>
+                        <% }); %>
+
+                    </select>
+
+                    <label style="color:black;font-size: 12px;">Select Time</label>
+                    <!-- Select dropdown for times from selected date -->
+                    <select id="timeSelect" class="form-control" style="display: none;">
+                        <option value="">Select Time</option>
+                    </select>
+
+                    <a href="#" class="btn btn-primary" style=" text-align: center; display: block; margin-top: 20px; " onclick="submitForm()">Book Slot</a>
+
+                </div>
+            </div>
+        </div>
+
+    </main> <br><br><br>
+
+    <footer>
+
+
+        <script>
+            const dateSelect = document.getElementById('dateSelect');
+            const timeSelect = document.getElementById('timeSelect');
+
+            dateSelect.addEventListener('change', async function () {
+                const selectedDate = this.value;
+                if (selectedDate) {
+                    try {
+                        // Fetch time slots for the selected date
+                        const response = await fetch(`/api/timeslots?courtId=<%= courtId %>&date=${selectedDate}`);
+                        const data = await response.json();
+
+                        // Populate the time dropdown with fetched times
+                        timeSelect.innerHTML = '<option value="">Select Time</option>';
+                        data.timeSlots.forEach(slot => {
+                            timeSelect.innerHTML += `<option value="${slot._id}">${slot.startTime} - ${slot.endTime}</option>`;
+                        });
+
+                        // Show the time dropdown
+                        timeSelect.style.display = 'block';
+                    } catch (error) {
+                        console.error('Error fetching time slots:', error);
+                    }
+                } else {
+                    // Hide the time dropdown if no date is selected
+                    timeSelect.style.display = 'none';
+                }
+            });
+        </script>
+
+<script>
+    // Function to generate a random reservation ID
+    function generateReservationId() {
+        // Generate a random number between 100000 and 999999
+        return Math.floor(100000 + Math.random() * 900000);
+    }
+
+    // Function to submit the form
+    function submitForm() {
+        // Generate a random reservation ID
+        const reservationId = generateReservationId();
+
+        // Get the selected date and time from the form
+        const selectedDate = document.getElementById('dateSelect').value;
+        const selectedTime = document.getElementById('timeSelect').value;
+        const category = document.getElementById('category').value;
+        
+        // Get the court ID from the form or from server if available
+        const courtId = '<%= courtId %>'; // Replace with actual court ID from server if available
+
+        // Get the user ID from the session or authentication if available
+
+        // Validate the form data
+        if (!selectedDate || !selectedTime || !courtId || !category) {
+            alert('Please select date, time, court, and log in to book a slot.');
+            return;
+        }
+
+        // Create a new reservation object
+        const reservation = {
+            reservationId: reservationId,
+            category: category,
+            courtId: courtId,
+            timeSlotId: selectedTime
+        };
+
+        // Send the reservation data to the server to store in the database
+        fetch('/api/reservations', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(reservation)
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Reservation successfully created with ID: ' + reservationId);
+            } else {
+                throw new Error('Failed to create reservation.');
+            }
+        })
+        .catch(error => {
+            console.error('Error creating reservation:', error);
+            alert('Failed to create reservation.');
+        });
+    }
+</script>
+
+        <a href="home.html">Home</a> <br>
+        <a href="info.html">About Us</a> <br> <br>
+        <a href="https://www.instagram.com/kfupm/?hl=ar"> <img src="inst.png" alt="instegram logo image" width="40">
+        </a>
+        <a href="https://twitter.com/KFUPM?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="X.png"
+                alt="X logo image" width="40"></a>
+        <a href="https://www.tiktok.com/tag/kfupm?lang=ar"><img src="tiktok.png" alt="TikTok logo image" width="40"></a>
+
+    </footer>
+
+
+
+</body>
+
+</html>

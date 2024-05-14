@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header> 
+        <!-- add CSS code that makes its position fixed -->
+        <!-- add js functions that opens the pages or sections specified in each button -->
+        <h4 id="website name">Cortly</h4>
+        <!-- add logo img -->
+        <a href="#"><button type="button" class="header" id="About Us"> About Us </button></a>
+
+        <a href="/login"><button type="button" class="header" id="Log in"> Log in </button></a>
+
+        <a href="/register"><button type="button" class="header" id="Signup"> Sign Up </button></a>
+
+        <a href="#"><button type="button" class="header" id="My Profile"> My Profile </button></a>
+
+
+    </header>
+    <main>
+    <div class="signup_div1">
+        <!--    html code to add the image in the background -->
+        <!-- add CSS code to style h2, h4, and the form and make the image in the background -->
+
+        <h2> Dream And Accomplish</h2>
+
+        <h4>A Booking Experience For Students By Students</h4>
+
+        <% if (messages.error) { %>
+            <p style="color: red;"><%= messages.error %></p>
+        <% } %>
+        <% if (messages.success) { %>
+            <p style="color: green;"><%= messages.success %></p>
+        <% } %>
+        <form action="/register" method="POST">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit" style="background-color: black;">Register</button>
+        </form>
+
+        <a href="Signup.html" style="color: blue;font-size: 12px;background-color: white;">Already have an account? Log In</a> <br><br><br>
+    </div>
+
+    
+    </main><br><br><br><br><br><br><br><br>
+    <footer>
+    
+        <a href="home.html">Home</a> <br>
+        <a href="info.html">About Us</a> <br> <br> 
+       <a href="https://www.instagram.com/kfupm/?hl=ar"> <img src="inst.png" alt="instegram logo image" width="40"> </a>
+        <a href="https://twitter.com/KFUPM?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="X.png" alt="X logo image" width="40"></a>
+        <a href="https://www.tiktok.com/tag/kfupm?lang=ar"><img src="tiktok.png" alt="TikTok logo image" width="40"></a>
+      
+    </footer>
+
+</body>
+</html>
